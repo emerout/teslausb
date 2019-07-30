@@ -268,7 +268,7 @@ function disconnect_usb_drives_from_host () {
 function archive_teslacam_clips () {
   log "Starting recording archiving..."
 
-  start_date = "($date)"
+  start_date = "$(date)"
 
   ensure_cam_file_is_mounted
 
