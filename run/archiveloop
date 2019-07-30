@@ -268,7 +268,7 @@ function disconnect_usb_drives_from_host () {
 function archive_teslacam_clips () {
   log "Starting recording archiving..."
 
-  start_date = "$(date)"
+  start_date = "($date)"
 
   ensure_cam_file_is_mounted
 
@@ -287,16 +287,13 @@ function archive_teslacam_clips () {
 
   /root/bin/archive-clips.sh
 
-<<<<<<< HEAD
   /root/bin/send-push-message "TeslaUSB:" "Archived started at $start_date, ended at $(date)"
 
-=======
   if [ ! -z "${WAKE_PID+x}" ]
   then
     log "killing PID $WAKE_PID"
     kill $WAKE_PID
   fi
->>>>>>> 19198b10e5f2633e4c1b477ed0569fa8e908a4be
   unmount_cam_file
 }
 
